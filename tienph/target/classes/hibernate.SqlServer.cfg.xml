@@ -11,7 +11,7 @@
 		<!-- Assume test is the database name -->
 
 		<property name="hibernate.connection.url">
-			jdbc:microsoft:sqlserver://localhost/QLNV
+			jdbc:sqlserver://localhost;databaseName=QLNV;integratedSecurity=true;
 		</property>
 
 

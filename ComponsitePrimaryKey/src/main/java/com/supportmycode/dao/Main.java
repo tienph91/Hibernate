@@ -9,18 +9,20 @@ import com.supportmycode.persistence.HibernateUtil;
 
 public class Main {
 
-	@SuppressWarnings("unchecked")
-	public static void main(String[] args) {
+    @SuppressWarnings("unchecked")
+    public static void main(String[] args) {
 
-		SessionFactory sf = HibernateUtil.getSessionFactory();
-		Session session = sf.openSession();
-		session.beginTransaction();
-		
-		EmployeeKey empKey = new EmployeeKey(1, "AmEx");		
-		Employee emp1 = new Employee(empKey, "Nina", "Mayers", "111");		
-				
-		session.save(emp1);		
-		session.getTransaction().commit();
-		session.close();
-	}
+        SessionFactory sf = HibernateUtil.getSessionFactory();
+        Session session = sf.openSession();
+        session.beginTransaction();
+
+        EmployeeKey empKey = new EmployeeKey(2, "AmEx");
+        Employee emp1 = new Employee(empKey, "Nina", "Mayers", "222");
+
+        session.saveOrUpdate(emp1);
+        session.getTransaction().commit();
+        session.close();
+
+        sf.close();
+    }
 }

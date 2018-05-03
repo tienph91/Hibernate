@@ -7,83 +7,82 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="EMPLOYEE")
+@Table(name = "EMPLOYEE")
 public class Employee {
 
-	@Id			
-	private EmployeeKey employeeKey;
-	
-	@Column(name="firstname")
-	private String firstname;
-	
-	@Column(name="lastname")
-	private String lastname;
-	
-	@Column(name="birth_date")
-	private Date birthDate;
-	
-	@Column(name="cell_phone")
-	private String cellphone;
+    @Id
+    private EmployeeKey employeeKey;
 
-	public Employee() {
-		
-	}
-	
-	public Employee(EmployeeKey employeeKey, String firstname, String lastname, String phone) {
-		this.employeeKey = employeeKey;
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.birthDate = new Date(System.currentTimeMillis());
-		this.cellphone = phone;
-	}
-	
-	public Employee(String firstname, String lastname, String phone) {		
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.birthDate = new Date(System.currentTimeMillis());
-		this.cellphone = phone;
-	}
-	
-	public EmployeeKey getEmployeeKey() {
-		return employeeKey;
-	}
+    @Column(name = "firstname")
+    private String firstname;
 
-	public void setEmployeeKey(EmployeeKey employeeKey) {
-		this.employeeKey = employeeKey;
-	}
+    @Column(name = "lastname")
+    private String lastname;
 
-	public String getFirstname() {
-		return firstname;
-	}
+    @Column(name = "birth_date")
+    private Date birthDate;
 
-	public String getLastname() {
-		return lastname;
-	}
+    @Column(name = "cell_phone")
+    private String cellphone;
 
-	public Date getBirthDate() {
-		return birthDate;
-	}
+    public Employee() {
 
-	public String getCellphone() {
-		return cellphone;
-	}
+    }
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
+    public Employee(EmployeeKey employeeKey, String firstname, String lastname, String phone) {
+        this.employeeKey = employeeKey;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.birthDate = new Date(System.currentTimeMillis());
+        this.cellphone = phone;
+    }
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
+    public Employee(String firstname, String lastname, String phone) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.birthDate = new Date(System.currentTimeMillis());
+        this.cellphone = phone;
+    }
 
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
-	}
+    public EmployeeKey getEmployeeKey() {
+        return employeeKey;
+    }
 
-	public void setCellphone(String cellphone) {
-		this.cellphone = cellphone;
-	}
-	
+    public void setEmployeeKey(EmployeeKey employeeKey) {
+        this.employeeKey = employeeKey;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public String getCellphone() {
+        return cellphone;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public void setCellphone(String cellphone) {
+        this.cellphone = cellphone;
+    }
+
 }

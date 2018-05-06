@@ -81,27 +81,28 @@ public class Employee {
     }
 
     @Override
-    public boolean equals(Object other) {
-        if (this == other)
-            return true;
-        if (!(other instanceof Employee))
-            return false;
-
-        final Employee emp = (Employee) other;
-
-        if (!emp.getId().equals(getId()))
-            return false;
-        if (!emp.getCellphone().equals(getCellphone()))
-            return false;
-
-        return true;
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((cellphone == null) ? 0 : cellphone.hashCode());
+        return result;
     }
 
     @Override
-    public int hashCode() {
-        int result;
-        result = getCellphone().hashCode();
-        result = (int) (29 * result + getId());
-        return result;
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Employee other = (Employee) obj;
+        if (cellphone == null) {
+            if (other.cellphone != null)
+                return false;
+        } else if (!cellphone.equals(other.cellphone))
+            return false;
+        return true;
     }
+
 }

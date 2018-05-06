@@ -15,13 +15,13 @@ public class App {
         System.out.println("Employee Name : " + emp1.getFirstname() + " , " + emp1.getLastname());
 
         // Close the session. emp1 will go to detached state.
-        session.close();
+        // session.close();
 
-        Session newSession = HibernateUtil.getSessionFactory().openSession();
-        newSession.beginTransaction();
+        // Session newSession = HibernateUtil.getSessionFactory().openSession();
+        // newSession.beginTransaction();
 
         // loading the previous object from database
-        Employee emp2 = (Employee) newSession.get(Employee.class, new Long(1));
+        Employee emp2 = (Employee) session.get(Employee.class, new Long(2));
         System.out.println("Employee Name : " + emp2.getFirstname() + " , " + emp2.getLastname());
 
         // Evaluate the equality
@@ -37,7 +37,7 @@ public class App {
             System.out.println("Emp1 and Emp2 are not equal in '.equals()' comparison");
         }
 
-        newSession.getTransaction().commit();
-        newSession.close();
+        session.getTransaction().commit();
+        session.close();
     }
 }

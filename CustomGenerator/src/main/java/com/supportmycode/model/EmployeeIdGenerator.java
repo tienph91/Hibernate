@@ -19,8 +19,7 @@ import org.hibernate.id.IdentifierGenerator;
  */
 public class EmployeeIdGenerator implements IdentifierGenerator {
 
-    public Serializable generate(SessionImplementor session, Object object)
-            throws HibernateException {
+    public Serializable generate(SessionImplementor session, Object object) throws HibernateException {
 
         String prefix = "EMP";
         Connection connection = session.connection();
@@ -37,8 +36,8 @@ public class EmployeeIdGenerator implements IdentifierGenerator {
                 return code;
             }
 
-        } catch (SQLException e) {       
-        	e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return null;
     }

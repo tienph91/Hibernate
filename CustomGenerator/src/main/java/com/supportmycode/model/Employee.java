@@ -10,78 +10,77 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-
 @Entity
-@Table(name="EMPLOYEE")
+@Table(name = "EMPLOYEE")
 public class Employee {
 
-	@Id
-	@GenericGenerator(name = "sequence_emp_id", strategy = "com.supportmycode.model.EmployeeIdGenerator")
-	@GeneratedValue(generator = "sequence_emp_id")	
-	@Column(name="employee_id")
-	private String employeeId;
-	
-	@Column(name="firstname")
-	private String firstname;
-	
-	@Column(name="lastname")
-	private String lastname;
-	
-	@Column(name="birth_date")
-	private Date birthDate;
-	
-	@Column(name="cell_phone")
-	private String cellphone;
+    @Id
+    @GenericGenerator(name = "sequence_emp_id", strategy = "com.supportmycode.model.EmployeeIdGenerator")
+    @GeneratedValue(generator = "sequence_emp_id")
+    @Column(name = "employee_id")
+    private String employeeId;
 
-	public Employee() {
-		
-	}
-	
-	public Employee(String firstname, String lastname, String phone) {
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.birthDate = new Date(System.currentTimeMillis());
-		this.cellphone = phone;
-	}
+    @Column(name = "firstname")
+    private String firstname;
 
-	public String getEmployeeId() {
-		return employeeId;
-	}
+    @Column(name = "lastname")
+    private String lastname;
 
-	public void setEmployeeId(String employeeId) {
-		this.employeeId = employeeId;
-	}
+    @Column(name = "birth_date")
+    private Date birthDate;
 
-	public String getFirstname() {
-		return firstname;
-	}
+    @Column(name = "cell_phone")
+    private String cellphone;
 
-	public String getLastname() {
-		return lastname;
-	}
+    public Employee() {
 
-	public Date getBirthDate() {
-		return birthDate;
-	}
+    }
 
-	public String getCellphone() {
-		return cellphone;
-	}
+    public Employee(String firstname, String lastname, String phone) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.birthDate = new Date(System.currentTimeMillis());
+        this.cellphone = phone;
+    }
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
+    public String getEmployeeId() {
+        return employeeId;
+    }
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
+    }
 
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
-	}
+    public String getFirstname() {
+        return firstname;
+    }
 
-	public void setCellphone(String cellphone) {
-		this.cellphone = cellphone;
-	}
-	
+    public String getLastname() {
+        return lastname;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public String getCellphone() {
+        return cellphone;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public void setCellphone(String cellphone) {
+        this.cellphone = cellphone;
+    }
+
 }

@@ -4,6 +4,7 @@
 	<groupId>com.supportmycode.dao</groupId>
 	<artifactId>ComponsitePrimaryKey</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>ComponsitePrimaryKey</name>
 	<description>Composite Primary Keys In Hibernate</description>
 	<dependencies>

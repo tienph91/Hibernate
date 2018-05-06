@@ -8,96 +8,100 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="EMPLOYEE")
+@Table(name = "EMPLOYEE")
 public class Employee {
 
-	@Id	
-	@GeneratedValue
-	private Long id;
-	
-	@Column(name="firstname")
-	private String firstname;
-	
-	@Column(name="lastname")
-	private String lastname;
-	
-	@Column(name="birth_date")
-	private Date birthDate;
-	
-	@Column(name="cell_phone")
-	private String cellphone;
+    @Id
+    @GeneratedValue
+    private Long id;
 
-	public Employee() {
-		
-	}
-	
-	public Employee(String firstname, String lastname, Date birthdate, String phone) {
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.birthDate = birthdate;
-		this.cellphone = phone;
-		
-	}
-	public Long getId() {
-		return id;
-	}
+    @Column(name = "firstname")
+    private String firstname;
 
-	public String getFirstname() {
-		return firstname;
-	}
+    @Column(name = "lastname")
+    private String lastname;
 
-	public String getLastname() {
-		return lastname;
-	}
+    @Column(name = "birth_date")
+    private Date birthDate;
 
-	public Date getBirthDate() {
-		return birthDate;
-	}
+    @Column(name = "cell_phone")
+    private String cellphone;
 
-	public String getCellphone() {
-		return cellphone;
-	}
+    public Employee() {
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    }
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
+    public Employee(String firstname, String lastname, Date birthdate, String phone) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.birthDate = birthdate;
+        this.cellphone = phone;
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
+    }
 
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setCellphone(String cellphone) {
-		this.cellphone = cellphone;
-	}
-	
-	@Override
-	public boolean equals(Object other) {
-	        if (this == other) return true;
-	        if ( !(other instanceof Employee) ) return false;
+    public String getFirstname() {
+        return firstname;
+    }
 
-	        final Employee emp = (Employee) other;
+    public String getLastname() {
+        return lastname;
+    }
 
-	        if ( !emp.getId().equals( getId() ) ) return false;
-	        if ( !emp.getCellphone().equals( getCellphone() ) ) return false;
+    public Date getBirthDate() {
+        return birthDate;
+    }
 
-	        return true;
-	}
+    public String getCellphone() {
+        return cellphone;
+    }
 
-	@Override
-	public int hashCode() {
-	        int result;
-	        result = getCellphone().hashCode();
-	        result = (int) (29 * result + getId());
-	        return result;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public void setCellphone(String cellphone) {
+        this.cellphone = cellphone;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other)
+            return true;
+        if (!(other instanceof Employee))
+            return false;
+
+        final Employee emp = (Employee) other;
+
+        if (!emp.getId().equals(getId()))
+            return false;
+        if (!emp.getCellphone().equals(getCellphone()))
+            return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        result = getCellphone().hashCode();
+        result = (int) (29 * result + getId());
+        return result;
+    }
 }

@@ -10,89 +10,88 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="EMPLOYEE")
+@Table(name = "EMPLOYEE")
 public class Employee {
 
-	@Id
-	@GeneratedValue
-	@Column(name="employee_id")
-	private Long employeeId;
-	
-	@Column(name="firstname")
-	private String firstname;
-	
-	@Column(name="lastname")
-	private String lastname;
-	
-	@Column(name="birth_date")
-	private Date birthDate;
-	
-	@Column(name="cell_phone")
-	private String cellphone;
+    @Id
+    @GeneratedValue
+    @Column(name = "employee_id")
+    private Long employeeId;
 
-	@OneToOne(mappedBy="employee", cascade=CascadeType.ALL)
-	private EmployeeDetail employeeDetail;
-	
-	public Employee() {
-		
-	}
-	
-	public Employee(String firstname, String lastname, Date birthdate, String phone) {
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.birthDate = birthdate;
-		this.cellphone = phone;
-		
-	}
+    @Column(name = "firstname")
+    private String firstname;
 
-	public EmployeeDetail getEmployeeDetail() {
-		return employeeDetail;
-	}
+    @Column(name = "lastname")
+    private String lastname;
 
-	public void setEmployeeDetail(EmployeeDetail employeeDetail) {
-		this.employeeDetail = employeeDetail;
-	}
+    @Column(name = "birth_date")
+    private Date birthDate;
 
-	public Long getEmployeeId() {
-		return employeeId;
-	}
+    @Column(name = "cell_phone")
+    private String cellphone;
 
-	public void setEmployeeId(Long employeeId) {
-		this.employeeId = employeeId;
-	}
+    @OneToOne(mappedBy = "employee", cascade = CascadeType.ALL)
+    private EmployeeDetail employeeDetail;
 
-	public String getFirstname() {
-		return firstname;
-	}
+    public Employee() {
 
-	public String getLastname() {
-		return lastname;
-	}
+    }
 
-	public Date getBirthDate() {
-		return birthDate;
-	}
+    public Employee(String firstname, String lastname, Date birthdate, String phone) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.birthDate = birthdate;
+        this.cellphone = phone;
 
-	public String getCellphone() {
-		return cellphone;
-	}
+    }
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
+    public EmployeeDetail getEmployeeDetail() {
+        return employeeDetail;
+    }
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
+    public void setEmployeeDetail(EmployeeDetail employeeDetail) {
+        this.employeeDetail = employeeDetail;
+    }
 
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
-	}
+    public Long getEmployeeId() {
+        return employeeId;
+    }
 
-	public void setCellphone(String cellphone) {
-		this.cellphone = cellphone;
-	}
-	
+    public void setEmployeeId(Long employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public String getCellphone() {
+        return cellphone;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public void setCellphone(String cellphone) {
+        this.cellphone = cellphone;
+    }
+
 }

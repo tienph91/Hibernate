@@ -1,17 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.supportmycode.dao</groupId>
-	<artifactId>EqualsAndHashcode</artifactId>
+	<groupId>tienph</groupId>
+	<artifactId>UnidirectionalOneToOneMapping</artifactId>
+	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>EqualsAndHashcode</name>
-	<description>equals and hashcode in Hibernate</description>
+	<name>UnidirectionalOneToOneMapping Maven Webapp</name>
+	<url>http://maven.apache.org</url>
 	<dependencies>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>ejb3-persistence</artifactId>
-			<version>1.0.1.GA</version>
-		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-annotations</artifactId>
@@ -33,4 +29,7 @@
 			<version>3.12.1.GA</version>
 		</dependency>
 	</dependencies>
+	<build>
+		<finalName>UnidirectionalOneToOneMapping</finalName>
+	</build>
 </project>

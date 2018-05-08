@@ -11,7 +11,7 @@
 		</id>
 		<one-to-one name="employeeDetail" class="in.codelearn.model.EmployeeDetail"
 			cascade="save-update"></one-to-one>
-		
+
 		<property name="firstname" />
 		<property name="lastname" column="lastname" />
 		<property name="birthDate" type="date" column="birth_date" />

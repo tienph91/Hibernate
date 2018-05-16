@@ -14,43 +14,43 @@ import javax.persistence.Table;
 import org.hibernate.annotations.IndexColumn;
 
 @Entity
-@Table(name="DEPARTMENT")
+@Table(name = "DEPARTMENT")
 public class Department {
 
-	@Id
-	@GeneratedValue
-	@Column(name="DEPARTMENT_ID")
-	private Long departmentId;
-	
-	@Column(name="DEPT_NAME")
-	private String departmentName;
-	
-	@OneToMany(cascade={CascadeType.ALL})
-	@JoinColumn(name="department_id")
-	@IndexColumn(name="idx")
-	private List<Employee> employees;
+    @Id
+    @GeneratedValue
+    @Column(name = "DEPARTMENT_ID")
+    private Long departmentId;
 
-	public Long getDepartmentId() {
-		return departmentId;
-	}
+    @Column(name = "DEPT_NAME")
+    private String departmentName;
 
-	public void setDepartmentId(Long departmentId) {
-		this.departmentId = departmentId;
-	}
+    @OneToMany(cascade = { CascadeType.ALL })
+    @JoinColumn(name = "department_id")
+    @IndexColumn(name = "idx")
+    private List<Employee> employees;
 
-	public String getDepartmentName() {
-		return departmentName;
-	}
+    public Long getDepartmentId() {
+        return departmentId;
+    }
 
-	public void setDepartmentName(String departmentName) {
-		this.departmentName = departmentName;
-	}
+    public void setDepartmentId(Long departmentId) {
+        this.departmentId = departmentId;
+    }
 
-	public List<Employee> getEmployees() {
-		return employees;
-	}
+    public String getDepartmentName() {
+        return departmentName;
+    }
 
-	public void setEmployees(List<Employee> employees) {
-		this.employees = employees;
-	}
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
+    }
 }

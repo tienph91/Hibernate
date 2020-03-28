@@ -14,82 +14,63 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="EMPLOYEE")
+@Table(name = "EMPLOYEE")
 public class Employee {
-	
-	@Id
-	@Column(name="EMPLOYEE_ID")
-	@GeneratedValue
-	private Long employeeId;
-	
-	@Column(name="FIRSTNAME")
-	private String firstname;
-	
-	@Column(name="LASTNAME")
-	private String lastname;
-	
-	@ManyToMany(cascade = {CascadeType.ALL})
-	@JoinTable(name="EMPLOYEE_MEETING", 
-				joinColumns={@JoinColumn(name="EMPLOYEE_ID")}, 
-				inverseJoinColumns={@JoinColumn(name="MEETING_ID")})
-	private Set<Meeting> meetings = new HashSet<Meeting>();
-	
-	public Employee() {
-	}
 
-	public Employee(String firstname, String lastname) {
-		this.firstname = firstname;
-		this.lastname = lastname;
-	}
-	
-	@Override
-	public boolean equals(Object emp) {
-		if(emp instanceof Employee) {
-			Employee employee = (Employee)emp;
-			
-			if(this.firstname.equals(employee.getFirstname()) &&
-					this.lastname.equals(employee.getLastname()))
-				return true;
-		}
+    @Id
+    @Column(name = "EMPLOYEE_ID")
+    @GeneratedValue
+    private Long employeeId;
 
-		return false;
-	}
-	@Override
-	public int hashCode() {
-	
-		return this.firstname.hashCode() + this.lastname.hashCode();
-	}
-	
-	public Long getEmployeeId() {
-		return employeeId;
-	}
+    @Column(name = "FIRSTNAME")
+    private String firstname;
 
-	public void setEmployeeId(Long employeeId) {
-		this.employeeId = employeeId;
-	}
+    @Column(name = "LASTNAME")
+    private String lastname;
 
-	public String getFirstname() {
-		return firstname;
-	}
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(name = "EMPLOYEE_MEETING", joinColumns = { @JoinColumn(name = "EMPLOYEE_ID") },
+            inverseJoinColumns = { @JoinColumn(name = "MEETING_ID") })
+    private Set<Meeting> meetings = new HashSet<Meeting>();
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
+    public Employee() {
+    }
 
-	public String getLastname() {
-		return lastname;
-	}
+    public Employee(String firstname, String lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
+    public Long getEmployeeId() {
+        return employeeId;
+    }
 
-	public Set<Meeting> getMeetings() {
-		return meetings;
-	}
+    public void setEmployeeId(Long employeeId) {
+        this.employeeId = employeeId;
+    }
 
-	public void setMeetings(Set<Meeting> meetings) {
-		this.meetings = meetings;
-	}
-	
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public Set<Meeting> getMeetings() {
+        return meetings;
+    }
+
+    public void setMeetings(Set<Meeting> meetings) {
+        this.meetings = meetings;
+    }
+
 }

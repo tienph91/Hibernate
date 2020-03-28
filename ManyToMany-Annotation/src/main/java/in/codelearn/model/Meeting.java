@@ -12,58 +12,62 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="MEETING")
+@Table(name = "MEETING")
 public class Meeting {
 
-	@Id
-	@Column(name="MEETING_ID")
-	@GeneratedValue
-	private Long meetingId;
+    @Id
+    @Column(name = "MEETING_ID")
+    @GeneratedValue
+    private Long meetingId;
 
-	@Column(name="SUBJECT")
-	private String subject;
-	
-	@Column(name="MEETING_DATE")
-	private Date meetingDate;
-	
-	@ManyToMany(mappedBy="meetings")
-	private Set<Employee> employees = new HashSet<Employee>();
-	
-	public Meeting(String subject) {
-		this.subject = subject;
-		this.meetingDate = new Date();
-	}
-	
-	public Set<Employee> getEmployees() {
-		return employees;
-	}
+    @Column(name = "SUBJECT")
+    private String subject;
 
-	public void setEmployees(Set<Employee> employees) {
-		this.employees = employees;
-	}
+    @Column(name = "MEETING_DATE")
+    private Date meetingDate;
 
-	public Long getMeetingId() {
-		return meetingId;
-	}
+    @ManyToMany(mappedBy = "meetings")
+    private Set<Employee> employees = new HashSet<Employee>();
 
-	public void setMeetingId(Long meetingId) {
-		this.meetingId = meetingId;
-	}
+    public Meeting() {
+        super();
+    }
 
-	public String getSubject() {
-		return subject;
-	}
+    public Meeting(String subject) {
+        this.subject = subject;
+        this.meetingDate = new Date();
+    }
 
-	public void setSubject(String subject) {
-		this.subject = subject;
-	}
+    public Set<Employee> getEmployees() {
+        return employees;
+    }
 
-	public Date getMeetingDate() {
-		return meetingDate;
-	}
+    public void setEmployees(Set<Employee> employees) {
+        this.employees = employees;
+    }
 
-	public void setMeetingDate(Date meetingDate) {
-		this.meetingDate = meetingDate;
-	}
+    public Long getMeetingId() {
+        return meetingId;
+    }
+
+    public void setMeetingId(Long meetingId) {
+        this.meetingId = meetingId;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public Date getMeetingDate() {
+        return meetingDate;
+    }
+
+    public void setMeetingDate(Date meetingDate) {
+        this.meetingDate = meetingDate;
+    }
 
 }
